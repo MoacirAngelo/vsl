@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Freelancer | Desenvolvedor fullstack</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" /> 
+
+	<script>
+	</script>	
+</head>
+<style>
+:root {
+  --main-header-bg: #252e3c;
+  --main-text-color: #1e90ff;
+  --btn-gradient-yellow: linear-gradient(to bottom, #eccd02 0%, #ca8d02 100%);
+/* linear-gradient(to bottom, #dfb106 0%, #ab5c01 100%);*/
+
+  --btn-gradient-blue: linear-gradient(to bottom, #3673c6 0%, #1993b5 100%);
+  --btn-gradient-blue-hov: linear-gradient(to bottom, #2784ca 0%, #2004c6 100%);
+  --blue-filter: invert(41%) sepia(90%) saturate(1096%) hue-rotate(190deg) brightness(96%) contrast(111%);
+}
+body, ul, li, h1, h2, h3, h4, h5, h6, input{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	list-style: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+	text-decoration: underline;
+}
+
+body{
+/*	background: url(https://www.w3schools.com/w3images/mountainskies.jpg) #FFF top center;*/
+	background-size: cover;
+	font-family: 'Oswald', Georgia, sans-serif;
+	color: var(--main-text-color);
+}
+
+.wrap{
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.main-header{
+	text-align: center;
+	padding: 25px 0;
+	background: var(--main-header-bg);
+	box-shadow: rgba(0,0,0,0.5) 0px 0px 11px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+.main-header h1{
+	font-size: 20px;
+	color: #FFF;
+}
+
+.main-content header{
+	text-align: center;
+}
+
+.main-content header h2{
+	text-align: center;
+	font-size: 36px;
+}
+
+.main-content header h3{
+	text-align: center;
+	font-size: 26px;
+	margin-bottom: 15px;
+}
+
+.video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+	margin-bottom: 15px;
+}
+
+.video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* 
+	Footer 
+*/
+
+.main-footer{
+	font-size: 11px;
+	text-align: center;
+	line-height: 1.6;
+	font-family: Arial;
+  }
+.main-footer a { color: var(--main-text-color); }
+
+/* Button */
+
+.btn{
+	padding: 15px 30px;
+	border-color: #000;
+	border-width: 0px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	background: #c68000;
+	background: var(--btn-gradient-blue);
+	box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.1);
+	display: block;
+	position: relative;
+	transition: all 350ms ease;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 30px;
+	color: #ffffff;
+	font-weight: bold;
+	letter-spacing: -1px;
+	text-shadow: #bb4202 1px 1px 0px;
+	text-decoration: none;
+}
+
+
+.btn:hover{
+	background: #c68000;
+	background: var(--btn-gradient-blue-hov);
+  transform: scale(1.05);
+}
+
+.btn:before,
+.btn:after{
+	background: url(../images/arrow.png);
+	width: 88px;
+	height: 78px;
+	content: ' ';
+	position: absolute;
+	top: -5px;
+  filter: var(--blue-filter);
+}
+
+.btn:before{
+	left: -105px;
+}
+
+.btn:after{
+	right: -105px;
+	transform: rotate(0deg) scaleX(-1);
+}
+
+@media screen and (max-width: 768px) {
+	.main-header{
+		margin-bottom: 0;
+	}
+
+	.main-content header h2{
+		font-size: 22px;
+	}
+
+	.main-content header h3{
+		font-size: 17px;
+	}
+
+	.main-header h1{
+		font-size: 20px;
+	}
+
+	.btn:before,
+	.btn:after{
+		top: auto;
+		bottom: -100px;
+	}	
+
+	.btn:before{
+		transform: rotate(-80deg);
+		left: 0;
+	}
+
+	.btn:after{
+		transform: rotate(80deg) scaleX(-1);
+		left: auto;
+		right: 0;
+	}
+}
+</style>
+<body>
+	<header class="main-header">
+		<h1>Your Company Name</h1>
+	</header>
+  <marquee>PROMOÇÃO</marquee>
+
+	<main class="main-content">
+		<div class="wrap">
+			<header>
+				<h2>Your Product Page Name</h2>
+				<h3>Interesting sub-title for your product</h3>
+			</header>
+
+			<div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+			</div>
+
+			<a href="" target="_blank" class="btn">
+				Click here to purchase
+			</a>
+		</div>
+	</main>
+
+	<footer class="main-footer">	
+		<div class="wrap">
+			<strong>© Your Company Name · All Rights Reserved</strong> <br />
+			<br />
+			<a href="https://www.99freelas.com.br/user/moacir-angelo" target="_blank"><strong>perfil 99freelas</strong></a>
+		</div>
+	</footer>
+</body>
+</html>
