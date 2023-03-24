@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Freelancer | Desenvolvedor fullstack</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" />
+</head>
+
+<body>
+  <header class="main-header">
+		<h1>Your Company Name</h1>
+	</header>
+  <div class="scroll-marquee">
+    <p>PROMOÇÃO</p>
+  </div>
+
+  <div id="app">
+    <div class="container">
+     <h2>Front end html/css + integração stripe</h2>
+
+      <div class="card">
+        <img src="img/jeans.jpg" alt="jeans">
+        <h1>Tailored Jeans</h1>
+        <p class="price">R$ 1,00</p>
+        <p>Some text about the jeans. Lorem ipsum</p>
+          <stripe-checkout
+            ref="checkoutRef"
+            mode="payment"
+            :pk="publishableKey"
+            :line-items="lineItems"
+            :success-url="successURL"
+            :cancel-url="cancelURL"
+            @loading="v => loading = v"
+          />
+          <button @click="submit">
+          <img id="cart-shopping" src="img/cart-shopping-solid.png"><p>COMPRAR</p></button>
+      </div>
+      <div class="barra-hotmart"> 
+        <img src="img/barra-hotmart.png">
+      </div>
+    </div>
+  </div>
+
+    <footer class="main-footer">	
+      <div class="wrap">
+        <strong>© Your Company Name · All Rights Reserved</strong> <br />
+        <br />
+        <a href="https://www.99freelas.com.br/user/moacir-angelo" target="_blank"><strong>perfil 99freelas</strong></a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-header-bg: #252e3c;
+  --main-text-color: #1e90ff;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 30px;
+  
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 0 3rem 0 3rem;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card img {
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: .5rem;
+}
+.card button .b-icon {
+  margin-right: 1rem;
+  font-size: 2rem
+}
+.card button:hover {
+   opacity: 0.7;
+}
+#cart-shopping {
+  width: 2.5rem;
+}
+
+.main-header{
+	text-align: center;
+	padding: 25px 0;
+	background: var(--main-header-bg);
+	box-shadow: rgba(0,0,0,0.5) 0px 0px 11px;
+	text-transform: uppercase;
+  color: #fff;
+}
+
+.main-footer{
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.6;
+  font-family: Arial;
+  margin: 2rem;
+  padding: 1rem;
+}
+.main-footer a { color: var(--main-text-color); }
+
+.scroll-marquee {
+  color: #fff;
+  background-color: lightblue;
+}
+.scroll-marquee p{
+  animation: marquee 12s linear infinite;
+  -webkit-animation: marquee 12s linear infinite;
+  -moz-animation: marquee 12s linear infinite;
+}
+
+
+@-moz-keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      @-webkit-keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      @keyframes marquee {
+        0% {
+          -moz-transform: translateX(100%);
+          -webkit-transform: translateX(100%);
+          transform: translateX(100%)
+        }
+        100% {
+          -moz-transform: translateX(-100%);
+          -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+        }
+      }
+
+.barra-hotmart {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 1.5rem;
+}
+.barra-hotmart img {
+  width: 50%;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    margin: 0 5rem 0 5rem;
+  }
+}
+
+</style>
+
+
