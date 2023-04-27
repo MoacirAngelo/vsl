@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Vue-*SEM NODE* </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<script src="vue@3.2.47.global.prod.js"></script>
+<script src="vue-router.global.prod.js"></script>
+
+<script src="main.js"></script>
+<!--COMPONENTES -->
+<script src='pages/home.vue.js'></script>
+<script src='pages/about.vue.js'></script>
+
+<script src="config/router.js"></script>
+
+<div id="app">
+  <h1>{{ message }}</h1>
+  <p>
+        <router-link to="/">Home</router-link>
+        <br>
+        <router-link to="/about">About</router-link>
+  </p>
+  <Transition name="slide-fade">
+    <router-view></router-view>
+  </Transition>
+</div>
+
+<script>
+  const app = Vue.createApp({})
+  app.use(router)
+  app.mount('#app')
+
+</script>
+
+</body>
+</html>
+
+
